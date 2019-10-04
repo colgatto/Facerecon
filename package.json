@@ -1,0 +1,17 @@
+{
+  "name": "facerecon",
+  "version": "0.1.0",
+  "description": "A little implementation of face-api.js for a fast use",
+  "main": "index.js",
+  "dependencies": {
+    "canvas": "^2.6.0",
+    "face-api.js": "^0.21.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
