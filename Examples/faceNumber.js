@@ -5,7 +5,7 @@ let fr = new Facerecon({
 });
 
 fr.init().then( () => {
-	fr.detectFaces(__dirname + '/img/input/big-bang.jpg').then( (detected) => {
+	fr.detectFaces(__dirname + '/img/input/img04.jpg').then( (detected) => {
 		let n = detected.length;
 		console.log(n + ' face' + ( n == 1 ? '' : 's'));
 	}).catch(console.error);
