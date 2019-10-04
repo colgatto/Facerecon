@@ -26,7 +26,8 @@ const defaultOptions = {
 	json_know_path:  __dirname + '/data/know_descriptors.json',
 	models_path: __dirname + '/models',
 	debug: false,
-	threshold: 0.6
+	threshold: 0.6,
+	verbose: false
 };
 
 class Facerecon{
@@ -123,7 +124,8 @@ class Facerecon{
 					const know_path = base_know_path + '/' +  kn[i];
 					let know = fs.readdirSync(know_path);
 					let k_descriptors = [];
-					console.log('Load: ' + kn[i]);
+					if(this.options.verbose)
+						console.log('Load: ' + kn[i]);
 					for(let j = 0; j < know.length; j++){
 						const img_path = know_path + '/' + know[j];
 						const k_img = await canvas.loadImage(img_path);
@@ -208,7 +210,8 @@ class Facerecon{
 			for (let i = 0; i < imgs_path.length; i++) {
 				const img_name = imgs_path[i];
 				const img_path = from + '/' + img_name;
-				console.log('check ' +  img_name);
+				if(this.options.verbose)
+					console.log('check ' +  img_name);
 				let data;
 				try{
 					data = await matchImage(faceMatcher, img_path);
@@ -226,7 +229,8 @@ class Facerecon{
 							let best_path = to + '/' + data[j].best._label;
 							if(!fs.existsSync(best_path)) fs.mkdirSync(best_path);
 							fs.copyFileSync(img_path, best_path + '/' + getTime() + '_' + img_name);
-							console.log('\tfind ' + data[j].best._label);
+							if(this.options.verbose)
+								console.log('\tfind ' + data[j].best._label);
 						}
 					}
 				}catch(e){
@@ -246,7 +250,6 @@ class Facerecon{
 				if(this.options.debug){
 					deb_image = faceapi.createCanvasFromMedia(image);
 					f_det.forEach( imp => {
-						console.log(imp);
 						const deb_box = new faceapi.draw.DrawBox(imp.box);
 						deb_box.draw(deb_image);
 					});

@@ -1,6 +1,6 @@
 {
   "name": "facerecon",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A simplified wrapper for face-api.js",
   "main": "index.js",
   "dependencies": {

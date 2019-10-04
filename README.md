@@ -60,9 +60,10 @@ fr.init().then( () => {
 If you want to add custom options you can pass them in the declaration
 ```js
 let fr = new Facerecon({
-	json_know_path: '/know_face.json', //Default is: __dirname + '/data/know_descriptors.json',
-	models_path: '/my_models_dir', //Default is: __dirname + '/models',
-	debug: '/img/debugImages', //Default is: false (no debug images)
-	threshold: 0.65 //Default is: 0.6
+	json_know_path: '/know_face.json', //Default: __dirname + '/data/know_descriptors.json',
+	models_path: '/my_models_dir', //Default: __dirname + '/models',
+	debug: '/img/debugImages', //Default: false (no debug images)
+	threshold: 0.65, //Default: 0.6
+	verbose: true //Default: false
 });
 ```
