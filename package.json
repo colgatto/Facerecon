@@ -1,7 +1,7 @@
 {
   "name": "facerecon",
-  "version": "0.2.0",
-  "description": "A little implementation of face-api.js for a fast use",
+  "version": "0.2.1",
+  "description": "A simplified wrapper for face-api.js",
   "main": "index.js",
   "dependencies": {
     "canvas": "^2.6.0",
